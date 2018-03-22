@@ -1,0 +1,50 @@
+
+CREATE TABLE APPRENANT(
+        id_apprenant   int (11) Auto_increment  NOT NULL ,
+        first_name        Varchar (25) NOT NULL ,
+        last_name     Varchar (25) NOT NULL ,
+        email         Varchar (100) NOT NULL ,
+        password       Varchar (255) NOT NULL ,
+        datenaiss_pro  Date NOT NULL ,
+        genre_pro      Varchar (25) NOT NULL ,
+        tel_pro        Varchar (25) NOT NULL ,
+        adresse_pro    Varchar (25) NOT NULL ,
+        statut_pro     BINARY NOT NULL ,
+        identifiant    Varchar (25) NOT NULL ,
+	adr_email_professionnel Varchar(25) NOT NULL,
+        hash           Varchar(50) NOT NULL,
+        active         tinyint(1) NOT NULL,
+	competence1	Varchar(255) NOT NULL,
+	competence2	Varchar(255) NOT NULL,
+	competence3	Varchar(255) NOT NULL,	
+	imageProfil	Varchar(255) NOT NULL,
+	disponibilite1	Varchar(255) NOT NULL,
+	disponibilite2	Varchar(255) NOT NULL,
+	disponibilite3	Varchar(255) NOT NULL,
+        PRIMARY KEY (id_apprenant )
+)ENGINE=InnoDB;
+
+
+
+CREATE TABLE communiquer(
+        id_message             	int (11) Auto_increment 	NOT NULL ,
+    	nbr_mp				   	int (11)	NOT NULL	,
+    	heure_mp			   	datetime 	NOT NULL	,
+    	contenu_mp				Text 		NOT NULL	,
+    	expediteur_mp			Varchar(25) NOT NULL	,
+    	recepteur_mp			varchar(25) NOT NULL	,
+        PRIMARY KEY (id_message )
+)ENGINE=InnoDB;
+
+
+
+CREATE TABLE RENCONTRER(
+        id_rencontre           	int (11) Auto_increment  NOT NULL ,
+    	client_renc				varchar(25) 	NOT NULL	,
+    	prestataire_renc		varchar(25)		NOT NULL	,
+    	lieu_renc				Varchar(25)		NOT NULL	,
+    	date_renc				datetime		NOT NULL	,
+    	type_renc				Varchar(25)		NOT NULL	,
+        PRIMARY KEY (id_rencontre )
+)ENGINE=InnoDB;
+
