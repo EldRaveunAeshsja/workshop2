@@ -1,0 +1,8 @@
+Le site a été construit sous XAMPP!!!!
+IMPORTER LA BDD DANS PHPMYDAMIN!!!!
+
+DEZIPPER LE FICHIER ET LE PLACER SOUS HTDOCS 
+OUVRIR LE FICHIER VIA NAVIGATEUR SANS UTILISER LE HTTPS, --> utilisez un http tou court sinon sa fait plantez l'inscription.
+Lors de la création d'un compte une erreur s'affiche en haut. Elle disparait sion se déco / reco.
+
+Merci
