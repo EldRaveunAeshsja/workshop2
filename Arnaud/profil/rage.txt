@@ -1,0 +1,44 @@
+     <form action="indexModifProfil.php" method="post">
+        <tr>
+            <input type="text" name="prenom" value="$first_name              "/></p>
+            <input type="text" name="nom" value="$last_name               "/></p>
+            
+            <!--  
+            <input type="text" name="" value="$email                   "/></p>
+            <input type="text" name="" value="$password                "/></p>
+            <input type="text" name="" value="$datenaiss_pro           "/></p>
+            <input type="text" name="" value="$genre_pro               "/></p>
+            <input type="text" name="" value="$tel_pro                 "/></p>
+            <input type="text" name="" value="$adresse_pro             "/></p>
+            <input type="text" name="" value="$statut_pro              "/></p>
+            <input type="text" name="" value="$identifiant             "/></p>
+            <input type="text" name="" value="$adr_email_compte        "/></p>
+            <input type="text" name="" value="$identifiant             "/></p>
+            -->
+
+            <input type="submit" value="Valider" />
+        </tr>
+    </div>
+
+    <?php
+        $req = $bdd->prepare('UPDATE apprenant SET first_name=[value-2],last_name=[value-3],');
+        $req->execute(array(
+          'first_name' => $first_name,
+          'last_name' => $last_name,
+          
+          /*'email' => $email,
+          'password' => $password,
+          'datenaiss_pro' => $datenaiss_pro,
+          'genre_pro' => $genre_pro,
+          'tel_pro' => $tel_pro,
+          'adresse_pro' => $adresse_pro,
+          'statut_pro' => $statut_pro,
+          'identifiant' => $identifiant,
+          'adr_email_compte' => $adr_email_compte,
+          'identifiant' => $identifiant,*/
+
+
+          ));
+
+        echo 'le compte a bien été ajouté';
+        ?>

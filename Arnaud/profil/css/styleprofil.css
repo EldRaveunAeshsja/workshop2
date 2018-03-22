@@ -1,0 +1,54 @@
+body
+{
+	height: 100%;
+	width: 99%;	
+	font-size: 1.2em;
+}
+
+li 
+{
+	list-style-type: none;
+}
+
+.redblock
+{
+	border: red solid 2px; 
+	width: 50%;
+	margin: auto;
+		
+}
+
+.darkblock
+{
+	border: black solid 2px; 
+	margin: 20px;
+	
+	padding: 0px 50px; 
+}
+
+.blueblock
+{
+	border: solid blue 1px;
+	margin: 1px auto;
+  	border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
