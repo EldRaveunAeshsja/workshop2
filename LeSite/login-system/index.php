@@ -60,11 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           <button class="button button-block" name="login" />S'identifier</button>
 
           </form>
-          <ul class="actions">
-                <li style=" list-style-type: none;">
-                <a href="SynchroTemplateModifPro">Retour au menu...</a>
-                </li>
-              </ul>
         </div>
 
         <div id="signup">

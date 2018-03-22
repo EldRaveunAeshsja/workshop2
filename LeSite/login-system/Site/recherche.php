@@ -56,10 +56,10 @@ if (isset($_POST["competenceSearch"]))
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
-					<div class="row">
+					<!-- <div class="row">
 						<a href="#" class="image fit" style="max-width: 50%"><img src="images/pic07.jpg" alt="" /></a>
 						<a href="#" class="image fit" style="max-width: 50%"><img src="images/pic07.jpg" alt="" /></a>
-					</div>
+					</div> -->
 					<section id="one" class="wrapper style1 special">
 						<div class="container">
 								<form action="#" method="post">
@@ -67,8 +67,8 @@ if (isset($_POST["competenceSearch"]))
 									<h2>Liste des apprenants</h2>
 									<div class="row ">
 										
-											<p class="4u 12u$(medium)">Compétences recherchées : <input class="box" name="competenceSearch" type="search" placeholder="Compétence....."></p>
-											<p class="4u 12u$(medium)"><input type="submit" id="validation"></p>
+											<p class="12u 12u$(medium)">Compétences recherchées : <input class="alt" style="min-width: 300px; min-height: 50px; margin-top: 10px; margin-left: 10px;" name="competenceSearch" type="search" placeholder="Compétence....."></p>
+											<p class="12u 12u$(medium)" style="margin-top: 15px;"><input type="submit" id="validation"></p>
 										
 									
 									</div>
@@ -182,70 +182,26 @@ if (isset($_POST["competenceSearch"]))
 				<div class="container">
 					<section class="links">
 						<div class="row">
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Lorem ipsum dolor</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Nesciunt itaque, alias possimus</a></li>
-									<li><a href="#">Optio rerum beatae autem</a></li>
-									<li><a href="#">Nostrum nemo dolorum facilis</a></li>
-									<li><a href="#">Quo fugit dolor totam</a></li>
-								</ul>
+							<section class="4u 6u(medium) 12u$(small)">
+								<h4>2018-2019</h4>
 							</section>
-							<section class="3u 6u$(medium) 12u$(small)">
-								<h3>Culpa quia, nesciunt</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Reiciendis dicta laboriosam enim</a></li>
-									<li><a href="#">Corporis, non aut rerum</a></li>
-									<li><a href="#">Laboriosam nulla voluptas, harum</a></li>
-									<li><a href="#">Facere eligendi, inventore dolor</a></li>
-								</ul>
+							<section class="4u 6u$(medium) 12u$(small)">
+								<h4>Workshop B1</h4>
+								
 							</section>
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Neque, dolore, facere</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
-									<li><a href="#">Explicabo inventore itaque autem</a></li>
-									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
-									<li><a href="#">Labore excepturi assumenda</a></li>
-								</ul>
+							<section class="4u 6u(medium) 12u$(small)">
+								<h4 style="font-size: 1em;">Remerciements de l'équipe aux coach de la semaine</h4>
+								
 							</section>
-							<section class="3u$ 6u$(medium) 12u$(small)">
-								<h3>Illum, tempori, saepe</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Recusandae, culpa necessita nam</a></li>
-									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
-									<li><a href="#">Tempore nam, enim quia</a></li>
-									<li><a href="#">Explicabo molestiae dolor labore</a></li>
-								</ul>
-							</section>
+							
 						</div>
 					</section>
 					<div class="row">
 						<div class="8u 12u$(medium)">
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li>
+								<li>&copy; 4GeekerS. All rights reserved.</li>
 								<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-							</ul>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<ul class="icons">
-								<li>
-									<a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
-								</li>
 							</ul>
 						</div>
 					</div>

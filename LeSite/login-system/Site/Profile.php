@@ -58,43 +58,38 @@ else {
 			<section id="banner">
 				<h2>Bienvenue </h2>
 				<h2><?= $first_name.' '.$last_name ?></h2>
-        <p>Sur</p>
-				<ul class="actions">
-					<li>
-						<a href="#" class="button big">MEET HELP</a>
-					</li>
-				</ul>
 			</section>
 
 		<!-- One -->
 			<section id="one" class="wrapper style1 special">
 				<div class="container">
 					<header class="major">
-						<h2>Profitez de Nos Services</h2>
-						<p>Notre équipe est tout le temps prêt à vous aider!</p>
+						<h2>Profitez de MEET HELP!!</h2>
+						<p>Un site toujours là pour vous aider :')</p>
 					</header>
 					<div class="row 150%">
 						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color1 fa-cloud"></i>
-								<h3>Prenez un rendez-vous avec les enseigners</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+							<section class="box" style="max-height: 350px;">
+								<i class="icon big rounded color9 fa-desktop"></i>
+								<h3>Etape n°1</h3>
+								<p>Trouvez la compétence dont vous avez besoin!</p>
 							</section>
 						</div>
 						<div class="4u 12u$(medium)">
-							<section class="box">
-								<i class="icon big rounded color9 fa-desktop"></i>
-								<h3>Trouver les compétences dont vous avez besoin en Recherche!</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+							
+							<section class="box" style="max-height: 350px;">
+								<i class="icon big rounded color1 fa-cloud"></i>
+								<h3>Etape n°2</h3>
+								<p>Prenez rendez-vous avec votre super héro</p>
 							</section>
 						</div>
 						<div class="4u$ 12u$(medium)">
-							<section class="box">
+							<section class="box" style="max-height: 350px;">
 								<i class="icon big rounded color6 fa-rocket"></i>
-								<h3>Posez vos questions en Forum!</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+								<h3>Etape n°3</h3>
+								<p>GAGNEZ PLUS DE PUISSANCE!!!!!!!</p>
 							</section>
-						</div>
+						</div> 
 					</div>
 				</div>
 			</section>
@@ -103,8 +98,8 @@ else {
 			<section id="two" class="wrapper style2 special">
 				<div class="container">
 					<header class="major">
-						<h2>Notre équipe innovante!</h2>
-						<p>Nous sommes tous passionés par le secteur d'informatique.</p>
+						<h2>Une équipe passionée</h2>
+						<p>Tous unis dans la crise</p>
 					</header>
 					<section class="profiles">
 						<div class="row">
@@ -120,7 +115,7 @@ else {
 							</section>
 							<section class="3u 6u(medium) 12u$(xsmall) profile">
 								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Marie Lahender</h4>
+								<h4>Marie Lahondere</h4>
 								<p>EPSI B1, Développeuse</p>
 							</section>
 							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
@@ -130,14 +125,6 @@ else {
 							</section>
 						</div>
 					</section>
-					<footer>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam dolore illum, temporibus veritatis eligendi, aliquam, dolor enim itaque veniam aut eaque sequi qui quia vitae pariatur repudiandae ab dignissimos ex!</p>
-						<ul class="actions">
-							<li>
-								<a href="#" class="button big">Lorem ipsum dolor sit</a>
-							</li>
-						</ul>
-					</footer>
 				</div>
 			</section>
 
@@ -148,46 +135,18 @@ else {
 				<div class="container">
 					<section class="links">
 						<div class="row">
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Lorem ipsum dolor</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Nesciunt itaque, alias possimus</a></li>
-									<li><a href="#">Optio rerum beatae autem</a></li>
-									<li><a href="#">Nostrum nemo dolorum facilis</a></li>
-									<li><a href="#">Quo fugit dolor totam</a></li>
-								</ul>
+							<section class="4u 6u(medium) 12u$(small)">
+								<h4>2018-2019</h4>
 							</section>
-							<section class="3u 6u$(medium) 12u$(small)">
-								<h3>Culpa quia, nesciunt</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Reiciendis dicta laboriosam enim</a></li>
-									<li><a href="#">Corporis, non aut rerum</a></li>
-									<li><a href="#">Laboriosam nulla voluptas, harum</a></li>
-									<li><a href="#">Facere eligendi, inventore dolor</a></li>
-								</ul>
+							<section class="4u 6u$(medium) 12u$(small)">
+								<h4>Workshop B1</h4>
+								
 							</section>
-							<section class="3u 6u(medium) 12u$(small)">
-								<h3>Neque, dolore, facere</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Distinctio, inventore quidem nesciunt</a></li>
-									<li><a href="#">Explicabo inventore itaque autem</a></li>
-									<li><a href="#">Aperiam harum, sint quibusdam</a></li>
-									<li><a href="#">Labore excepturi assumenda</a></li>
-								</ul>
+							<section class="4u 6u(medium) 12u$(small)">
+								<h4 style="font-size: 1em;">Remerciements de l'équipe aux coach de la semaine</h4>
+								
 							</section>
-							<section class="3u$ 6u$(medium) 12u$(small)">
-								<h3>Illum, tempori, saepe</h3>
-								<ul class="unstyled">
-									<li><a href="#">Lorem ipsum dolor sit</a></li>
-									<li><a href="#">Recusandae, culpa necessita nam</a></li>
-									<li><a href="#">Cupiditate, debitis adipisci blandi</a></li>
-									<li><a href="#">Tempore nam, enim quia</a></li>
-									<li><a href="#">Explicabo molestiae dolor labore</a></li>
-								</ul>
-							</section>
+							
 						</div>
 					</section>
 					<div class="row">
@@ -196,22 +155,6 @@ else {
 								<li>&copy; 4GeekerS. All rights reserved.</li>
 								<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
 								<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-							</ul>
-						</div>
-						<div class="4u$ 12u$(medium)">
-							<ul class="icons">
-								<li>
-									<a class="icon rounded fa-facebook"><span class="label">Facebook</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-twitter"><span class="label">Twitter</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-google-plus"><span class="label">Google+</span></a>
-								</li>
-								<li>
-									<a class="icon rounded fa-linkedin"><span class="label">LinkedIn</span></a>
-								</li>
 							</ul>
 						</div>
 					</div>
