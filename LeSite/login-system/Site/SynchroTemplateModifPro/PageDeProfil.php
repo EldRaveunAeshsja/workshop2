@@ -19,6 +19,7 @@ else {
     $bdd = new PDO('mysql:host=localhost;dbname=workshop2;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
     $reponse = $bdd->query('SELECT * FROM apprenant WHERE id_apprenant = '. $_SESSION['id_apprenant']);
+    $rencontre = $bdd->query('SELECT * FROM rencontrer WHERE prestataire_renc = '."'". $_SESSION['first_name']."'");
 ?>
 <!DOCTYPE html>
 <!--
@@ -63,9 +64,7 @@ else {
 		<!-- Main -->
 		<?php  while ($donnees = $reponse -> fetch())
 			{
-				?>
-
-
+			?>
 			<section id="main" class="wrapper">
 				<div class="container">
 
@@ -73,65 +72,86 @@ else {
 						<h2>Profil de <?php echo $donnees['first_name']; ?></h2>
 					</header>
 						<section class="links">
-						<div class="row">
-							<section class="4u 6u(medium)">
-								<ul class="alt">
-									<li><a class="image fit"><img src=<?php echo $donnees['imageProfil']; ?> alt="image de profil" /></a></li>
-								</ul>
-							</section>
-							<section class="4u 6u(medium)">
-								<h3>Identité :</h3>
-								<ul class="alt">
-									<li>Nom : <?php echo $donnees['last_name']; ?> </li>
-									<li>Prénoms : <?php echo $donnees['first_name']; ?> </li>
-									<li>Date de Naissance : <?php echo $donnees['datenaiss_pro']; ?></li>
-								</ul>
-							</section>
-							<section class="4u 12u(medium) 12u$(small)">
-								<h3>Communication</h3>
-								<ul class="alt">
-									<li>Adresse @mail pro : <?php echo $donnees['adr_email_professionnel']; ?></li>
-									<li>Téléphone : <?php echo $donnees['tel_pro']; ?></li>
-									<li>Adresse Physique : <?php echo $donnees['adresse_pro']; ?></li>
-								</ul>
-							</section>
-							
-						</div>
+							<div class="row">
+								<section class="4u 6u(medium)">
+									<ul class="alt">
+										<li><a class="image fit"><img src=<?php echo $donnees['imageProfil']; ?> alt="image de profil" /></a></li>
+									</ul>
+								</section>
+								<section class="4u 6u(medium)">
+									<h3>Identité :</h3>
+									<ul class="alt">
+										<li>Nom : <?php echo $donnees['last_name']; ?> </li>
+										<li>Prénoms : <?php echo $donnees['first_name']; ?> </li>
+										<li>Date de Naissance : <?php echo $donnees['datenaiss_pro']; ?></li>
+									</ul>
+								</section>
+								<section class="4u 12u(medium) 12u$(small)">
+									<h3>Communication</h3>
+									<ul class="alt">
+										<li>Adresse @mail pro : <?php echo $donnees['adr_email_professionnel']; ?></li>
+										<li>Téléphone : <?php echo $donnees['tel_pro']; ?></li>
+										<li>Adresse Physique : <?php echo $donnees['adresse_pro']; ?></li>
+									</ul>
+								</section>
+								
+							</div>
 						</section>
 						<section class="links">
-
-						<section class="links">
-						<div class="row">
-							<section class="5u 12u$(small)">
-								<h3>Savoir-Faire</h3>
-								<ul class="alt">
-									<li>Compétence 1 : <?php echo $donnees['competence1']; ?></li>
-									<li>Compétence 2 : <?php echo $donnees['competence2']; ?></li>
-									<li>Compétence 3 : <?php echo $donnees['competence3']; ?></li>
-								</ul>
-							</section>
-							<section class="5u 12u$(small)">
-								<h3>Disponibilitées</h3>
-								<ul class="alt">
-									<li>Disponibilitée 1 : <?php echo $donnees['disponibilite1']; ?></li>
-									<li>Disponibilitée 2 : <?php echo $donnees['disponibilite2']; ?></li>
-									<li>Disponibilitée 3 : <?php echo $donnees['disponibilite3']; ?></li>
-								</ul>
-							</section>
-							<section class="2u 12u$(medium)">
-								<a href="PageDeProfilParametres.php" class="button">Modifier le profil</a>
-							</section>
-							
-						</div>
+							<div class="row">
+								<section class="5u 12u$(small)">
+									<h3>Savoir-Faire</h3>
+									<ul class="alt">
+										<li>Compétence 1 : <?php echo $donnees['competence1']; ?></li>
+										<li>Compétence 2 : <?php echo $donnees['competence2']; ?></li>
+										<li>Compétence 3 : <?php echo $donnees['competence3']; ?></li>
+									</ul>
+								</section>
+								<section class="5u 12u$(small)">
+									<h3>Disponibilitées</h3>
+									<ul class="alt">
+										<li>Disponibilitée 1 : <?php echo $donnees['disponibilite1']; ?></li>
+										<li>Disponibilitée 2 : <?php echo $donnees['disponibilite2']; ?></li>
+										<li>Disponibilitée 3 : <?php echo $donnees['disponibilite3']; ?></li>
+									</ul>
+								</section>
+								<section class="2u 12u$(medium)" style="margin: 5.5em auto;">
+									<a href="PageDeProfilParametres.php" class="button">Modifier le profil</a>
+								</section>
+								
+							</div>
 						</section>
-						<section class="links">
 				</div>
 			</section>
-
-
 			<?php 
 			} 
 			?>
+					
+			<section id="main" class="wrapper">			
+				<div class="container">
+						<section class="links">
+							<h3>Demande de rencontres : </h3>
+						<div class="row">
+							<?php  while ($message = $rencontre -> fetch())
+							{
+							?>				
+							<div class="box" style="margin: 1em 2em;">
+								<ul class="alt">
+									<li>client : <?php echo $message['client_renc']; ?></li>
+									<li>type : <?php echo $message['type_renc']; ?></li>
+									<li>communication : <?php echo $message['lieu_renc']; ?></li>
+									<li>date : <?php echo $message['date_renc']; ?></li>	
+								</ul>
+							</div>
+						
+						<?php 
+						} 
+						?>
+						</div>
+						</section>
+				</div>
+			</section>	
+			
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">

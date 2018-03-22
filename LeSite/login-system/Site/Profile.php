@@ -65,7 +65,7 @@ else {
 				<div class="container">
 					<header class="major">
 						<h2>Profitez de MEET HELP!!</h2>
-						<p>Un site toujours là pour vous aider :')</p>
+						<p>Un site toujours là pour vous faire aider :')</p>
 					</header>
 					<div class="row 150%">
 						<div class="4u 12u$(medium)">
@@ -80,7 +80,7 @@ else {
 							<section class="box" style="max-height: 350px;">
 								<i class="icon big rounded color1 fa-cloud"></i>
 								<h3>Etape n°2</h3>
-								<p>Prenez rendez-vous avec votre super héro</p>
+								<p>Prenez rendez-vous avec votre super héros</p>
 							</section>
 						</div>
 						<div class="4u$ 12u$(medium)">
@@ -105,23 +105,26 @@ else {
 						<div class="row">
 							<section class="3u 6u(medium) 12u$(xsmall) profile">
 								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Jatin Bhatia</h4>
-								<p>EPSI B1, Développeur</p>
+								
+								<h4>Deguene Diene</h4>
+								<p>EPSI B1, Développeuse</p>
 							</section>
 							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Arnaud Gonnin</h4>
-								<p>EPSI B1, Développeur</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
 								<img src="images/profile_placeholder.gif" alt="" />
 								<h4>Marie Lahondere</h4>
 								<p>EPSI B1, Développeuse</p>
 							</section>
+							<section class="3u 6u(medium) 12u$(xsmall) profile">
+								<img src="images/profile_placeholder.gif" alt="" />
+								
+								<h4>Jatin Bhatia</h4>
+								<p>EPSI B1, Développeur</p>
+							</section>
 							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
 								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Deguene Diene</h4>
-								<p>EPSI B1, Développeuse</p>
+								
+								<h4>Arnaud Gonnin</h4>
+								<p>EPSI B1, Développeur</p>
 							</section>
 						</div>
 					</section>
@@ -136,7 +139,7 @@ else {
 					<section class="links">
 						<div class="row">
 							<section class="4u 6u(medium) 12u$(small)">
-								<h4>2018-2019</h4>
+								<h4>2018 semaine 12</h4>
 							</section>
 							<section class="4u 6u$(medium) 12u$(small)">
 								<h4>Workshop B1</h4>
