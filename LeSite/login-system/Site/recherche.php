@@ -2,10 +2,19 @@
 $bdd = new PDO('mysql:host=localhost;dbname=workshop2','root', '');
 session_start();
 
-$sql = $bdd->prepare("SELECT * FROM lister");
-$sql->execute();
+$bdd = new PDO('mysql:host=localhost;dbname=workshop2;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+if (isset($_POST["competenceSearch"]))	
+	{
+		echo $_POST["competenceSearch"];
+		$query = "SELECT * FROM apprenant WHERE competence1 = '" . $_POST["competenceSearch"] . "' OR competence2 = '" . $_POST["competenceSearch"] . "' OR competence3 = '" . $_POST["competenceSearch"] . "'";
+		$reponse = $bdd->query($query);
+	}
+	else
+	{
+		$reponse = $bdd->query('SELECT * FROM apprenant');
+	}
 
-$count = $sql->rowCount();
+
 
  ?>
 
@@ -32,13 +41,14 @@ $count = $sql->rowCount();
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="recherche.php">4GeekS</a></h1>
+				<h1><a href="Profile.php">MEET HELP</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="Profile.php">Profil</a></li>
+						<li><a href="Profile.php">Home</a></li>
 						<li><a href="recherche.php">Recherche</a></li>
-						<li><a href="forum.php">Forum</a></li>
-						<li><a href="logout.php" class="button special">Se Déconnecter</a></li>
+						<li><a href="SynchroTemplateModifPro/PageDeProfil.php">Profil</a></li>
+						<li><a href="../logout.php" class="button special">Se déconnecter</a></li>
+
 					</ul>
 				</nav>
 			</header>
@@ -46,51 +56,124 @@ $count = $sql->rowCount();
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
+					<div class="row">
+						<a href="#" class="image fit" style="max-width: 50%"><img src="images/pic07.jpg" alt="" /></a>
+						<a href="#" class="image fit" style="max-width: 50%"><img src="images/pic07.jpg" alt="" /></a>
+					</div>
+					<section id="one" class="wrapper style1 special">
+						<div class="container">
+								<form action="#" method="post">
+								<header class="major">
+									<h2>Liste des apprenants</h2>
+									<div class="row ">
+										
+											<p class="4u 12u$(medium)">Compétences recherchées : <input class="box" name="competenceSearch" type="search" placeholder="Compétence....."></p>
+											<p class="4u 12u$(medium)"><input type="submit" id="validation"></p>
+										
+									
+									</div>
+								</header>
+								</form>
+							<div class="row 100%">
+							<?php  while ($donnees = $reponse -> fetch())
+											{
+											?>
+											<div class="4u 12u$(medium)">
+												<a href="#three"></a>
+												
+											<section class="box" style="max-height: 33em;">
+												<i class="icon big rounded color1 fa-cloud"></i>
+												<h3><?php echo $donnees['first_name'].'-' .$donnees['last_name'] ?></h3>
+													<div style="border-radius: 4px; border: solid 1px rgba(144, 144, 144, 0.25);margin-bottom: 2em;padding: 1em;">
+														<ul class="12u icons"><h4 >Compétences :</h4>
+															<li><?php echo $donnees['competence1']?></li>
+															<li><?php echo $donnees['competence2']?></li>
+															<li><?php echo $donnees['competence3']?></li>
+														</ul>
+														<ul class="12u icons"><h5>Disponibilité :</h5>
+															<li><?php echo $donnees['disponibilite1']?></li>
+															<li><?php echo $donnees['disponibilite2']?></li>
+															<li><?php echo $donnees['disponibilite3']?></li>
+														</ul>
+													</div>
+											</section>
+											</div>
+											<?php 
+											}
+											?>
+					        </div>
+						</div>
+					</section>                    	 
 
+				</div>
+			</section>
+
+		<!-- ici nous allons collez un truc peremettant  -->
+		<section id="three" class="wrapper style3 special">
+				<div class="container">
 					<header class="major">
-						<h2>La liste des apprenants</h2>
-						<p>Pour améliorer vos compétences, vous pouvez rechercher les apprenants avec les compétences dont vous auriez besoin!. </p>
+						<h2>Prenez vite un rendez-vous</h2>
+						<p>Un super héro vous répondra dans les plus brefs délais</p>
 					</header>
+				</div>
+				<div class="container 50%">
+					<form action="#" method="post">
+						<div class="row uniform">
+              <table border=1>
+                <form class="" action="" method="post">
+                <tr>
+                  <td><b>Client</b></td>
+                  <td><input type="text" name="client_renc"></td>
+               </tr>
+                <tr>
+                  <td><b>Super héro</b></td>
+                  <td><input type="text" name="prestataire_renc"></td>
+                </tr>
+                <tr>
+                  <td><b>Date du rendez-vous</b></td>
+                  <td>
+                    <selecte name="date_renc">
+                <input type="date" max="2080-12-31" min="2018-03-21" name="the_date">
+                  </td>
+                </tr>
+                <tr>
+                  <td><b>Type</b></td>
+                  <td><SELECT name="type_renc" size="1">
+                    <OPTION>Audio
+                    <OPTION>Video
+                    <OPTION>Rendez-vous physique
+                  </SELECT>
+                </td>
+                </tr>
+                <tr>
+                  <td><b>Lieu de rencontre<b></td>
+                    <td><SELECT name="lieu_renc" size="1">
 
-					<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-					<div id="qualification">
-				     <div class="container">
-				         <div class="row">
-				             <div class="col-sm-12">
-				                 <table class="table table-striped">
-				                     <thead>
-				                     <tr>
-				                         <th>ID_Apprenant</th>
-				                         <th>Nom</th>
-				                         <th>Prénom</th>
-				                         <th>ID_Compétence</th>
-				                         <th>Compétence</th>
-				                         <th>Niveau</th>
-				                     </tr>
-				                     </thead>
-
-				    <?php
-				    $apprenant = $sql->fetchAll();
-				            for($i=0;$i< $count;$i++)
-				            {
-				                echo "<tr>";
-				                echo "<td>".$apprenant[$i]['id_apprenant']."</td>";
-				                echo "<td>".$apprenant[$i]['nom_apprenant']."</td>";
-				                echo "<td>".$apprenant[$i]['prenom_apprenant']."</td>";
-				                echo "<td>".$apprenant[$i]['id_competence']."</td>";
-				                echo "<td>".$apprenant[$i]['nom_competence']."</td>";
-				                echo "<td>".$apprenant[$i]['niveau']."</td>";
-				                echo "</tr>";
-				            }
-
-				     ?>
-
-				                   </table>
-				                 </div>
-				            </div>
-				          </div>
-				    </div>
-
+                      <OPTION class="texteenrouge" disabled>• Audio
+                      <OPTION>Téléphone
+                      <OPTION>Skype
+                      <OPTION>Discord
+                      <OPTION>Slack
+                      <OPTION class="texteenrouge" disabled>• Video
+                      <OPTION>FaceTime
+                      <OPTION>Skype
+                      <OPTION>Discord
+                      <OPTION class="texteenrouge" disabled>• Rendez-vous physique
+                      <OPTION>Bureau au campus
+                      <OPTION>Café
+                      <OPTION>Salle de classe
+                    </SELECT>
+                  </td>
+                <tr/>
+              </table>
+              <div class="12u$">
+                <ul class="actions">
+                  <li><input value="Envoyez" class="special big" type="submit"></li>
+                </ul>
+              </div>
+              </form>
+						</div>
+					</form>
 				</div>
 			</section>
 
@@ -171,3 +254,26 @@ $count = $sql->rowCount();
 
 	</body>
 </html>
+
+<?php
+  if(isset($_POST['boutton']))
+  {
+  $id_apprenant = $_POST['id_apprenant'];
+  $id_apprenant_APPRENANT = $_POST['$id_apprenant_APPRENANT'];
+  $client_renc= $_POST['client_renc'];
+  $prestataire_renc = $_POST['prestataire_renc'];
+  $lieu_renc = $_POST['lieu_renc'];
+  $date_renc = $_POST['date_renc'];
+  $type_renc = $_POST['type_renc'];
+
+if(!empty($_POST['client_renc']) AND !empty($_POST['prestataire_renc']) AND !empty($_POST['lieu_renc']) AND !empty($_POST['date_renc']) AND !empty($_POST['type_renc'])) {
+  $requete="INSERT INTO rencontrer (client_renc, prestataire_renc, lieu_renc, date_renc, type_renc) VALUES ('$client_renc', '$prestataire_renc', '$lieu_renc', '$date_renc', '$type_renc' )";
+  $bdd->query($requete);
+ } else {
+  $erreur = "Tous les champs n'ont pas été remplis";
+} }
+   if(isset($erreur)) {
+      echo '<font color="red">'.$erreur."</font>";
+   }
+
+?>

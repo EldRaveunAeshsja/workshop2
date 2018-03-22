@@ -17,6 +17,7 @@ else {
     $email = $_SESSION['email'];
     $active = $_SESSION['active'];
 }
+
 ?>
 
 <html lang="fr">
@@ -44,7 +45,7 @@ else {
 				<nav id="nav">
 					<ul>
 						<li><a href="Profile.php">Profil</a></li>
-						<li><a href="generic.php">Recherche</a></li>
+						<li><a href="Recherche.php">Recherche</a></li>
 						<li><a href="elements.php">Forum</a></li>
 						<li><a href="logout.php" class="button special">Se déconnecter</a></li>
 					</ul>

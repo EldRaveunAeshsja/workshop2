@@ -49,12 +49,13 @@ else {
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="../Profile.php">Transit</a></h1>
+				<h1><a href="../Profile.php">MEET HELP</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.php">Home</a></li>
-						<li><a href="elements.php">Elements</a></li>
-						<li><a href="#" class="button special">Sign Up</a></li>
+						<li><a href="../Profile.php">Home</a></li>
+						<li><a href="../recherche.php">Recherche</a></li>
+						<li><a href="#">Profil</a></li>
+						<li><a href="../../logout.php" class="button special">Se déconnecter</a></li>
 					</ul>
 				</nav>
 			</header>

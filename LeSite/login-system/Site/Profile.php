@@ -7,7 +7,7 @@ session_start();
 // Check if user is logged in using the session variable
 if ( $_SESSION['logged_in'] != 1 ) {
   $_SESSION['message'] = " Il faudra vous inscrire pour voir votre profil!";
-  header("location: error.php");
+  header("location: ../error.php");
 }
 else {
     // Makes it easier to read
@@ -17,12 +17,13 @@ else {
     $email = $_SESSION['email'];
     $active = $_SESSION['active'];
 }
+
 ?>
 
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8">
-		<title>Earn Your Skills!</title>
+		<title>MEET HELP</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -40,13 +41,15 @@ else {
 
 		<!-- Header -->
 			<header id="header">
-				<h1><a href="Profile.php">4GeekS</a></h1>
+				<h1><a href="#">MEET HELP</a></h1>
 				<nav id="nav">
 					<ul>
 						
+						<li><a href="Profile.php">Home</a></li>
 						<li><a href="recherche.php">Recherche</a></li>
 						<li><a href="SynchroTemplateModifPro/PageDeProfil.php">Profil</a></li>
-						<li><a href="logout.php" class="button special">Se déconnecter</a></li>
+						<li><a href="../logout.php" class="button special">Se déconnecter</a></li>
+
 					</ul>
 				</nav>
 			</header>
@@ -58,7 +61,7 @@ else {
         <p>Sur</p>
 				<ul class="actions">
 					<li>
-						<a href="#" class="button big">Earn Your Skills!</a>
+						<a href="#" class="button big">MEET HELP</a>
 					</li>
 				</ul>
 			</section>
@@ -139,73 +142,6 @@ else {
 			</section>
 
 		<!-- Three -->
-			<section id="three" class="wrapper style3 special">
-				<div class="container">
-					<header class="major">
-						<h2>Prenez vite un rendez-vous</h2>
-						<p>Un super héro vous répondra dans les plus brefs délais</p>
-					</header>
-				</div>
-				<div class="container 50%">
-					<form action="#" method="post">
-						<div class="row uniform">
-              <table border=1>
-                <form class="" action="" method="post">
-                <tr>
-                  <td><b>Client</b></td>
-                  <td><input type="text" name="client_renc"></td>
-               </tr>
-                <tr>
-                  <td><b>Super héro</b></td>
-                  <td><input type="text" name="prestataire_renc"></td>
-                </tr>
-                <tr>
-                  <td><b>Date du rendez-vous</b></td>
-                  <td>
-                    <selecte name="date_renc">
-                <input type="date" max="2080-12-31" min="2018-03-21" name="the_date">
-                  </td>
-                </tr>
-                <tr>
-                  <td><b>Type</b></td>
-                  <td><SELECT name="type_renc" size="1">
-                    <OPTION>Audio
-                    <OPTION>Video
-                    <OPTION>Rendez-vous physique
-                  </SELECT>
-                </td>
-                </tr>
-                <tr>
-                  <td><b>Lieu de rencontre<b></td>
-                    <td><SELECT name="lieu_renc" size="1">
-
-                      <OPTION class="texteenrouge" disabled>• Audio
-                      <OPTION>Téléphone
-                      <OPTION>Skype
-                      <OPTION>Discord
-                      <OPTION>Slack
-                      <OPTION class="texteenrouge" disabled>• Video
-                      <OPTION>FaceTime
-                      <OPTION>Skype
-                      <OPTION>Discord
-                      <OPTION class="texteenrouge" disabled>• Rendez-vous physique
-                      <OPTION>Bureau au campus
-                      <OPTION>Café
-                      <OPTION>Salle de classe
-                    </SELECT>
-                  </td>
-                <tr/>
-              </table>
-              <div class="12u$">
-                <ul class="actions">
-                  <li><input value="Envoyez" class="special big" type="submit"></li>
-                </ul>
-              </div>
-              </form>
-						</div>
-					</form>
-				</div>
-			</section>
 
 		<!-- Footer -->
 			<footer id="footer">
@@ -284,26 +220,3 @@ else {
 
 	</body>
 </html>
-
-<?php
-  if(isset($_POST['boutton']))
-  {
-  $id_apprenant = $_POST['id_apprenant'];
-  $id_apprenant_APPRENANT = $_POST['$id_apprenant_APPRENANT'];
-  $client_renc= $_POST['client_renc'];
-  $prestataire_renc = $_POST['prestataire_renc'];
-  $lieu_renc = $_POST['lieu_renc'];
-  $date_renc = $_POST['date_renc'];
-  $type_renc = $_POST['type_renc'];
-
-if(!empty($_POST['client_renc']) AND !empty($_POST['prestataire_renc']) AND !empty($_POST['lieu_renc']) AND !empty($_POST['date_renc']) AND !empty($_POST['type_renc'])) {
-  $requete="INSERT INTO rencontrer (client_renc, prestataire_renc, lieu_renc, date_renc, type_renc) VALUES ('$client_renc', '$prestataire_renc', '$lieu_renc', '$date_renc', '$type_renc' )";
-  $bdd->query($requete);
- } else {
-  $erreur = "Tous les champs n'ont pas été remplis";
-} }
-   if(isset($erreur)) {
-      echo '<font color="red">'.$erreur."</font>";
-   }
-
-?>

@@ -7,6 +7,10 @@ $sql->execute();
 
 $count = $sql->rowCount();
 
+
+$bdd = new PDO('mysql:host=localhost;dbname=workshop2;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$reponse = $bdd->query('SELECT * FROM apprenant');
+
  ?>
 
 <!DOCTYPE html>
@@ -36,7 +40,6 @@ $count = $sql->rowCount();
 				<nav id="nav">
 					<ul>
 						<li><a href="Profile.php">Profil</a></li>
-						<li><a href="recherche.php">Recherche</a></li>
 						<li><a href="forum.php">Forum</a></li>
 						<li><a href="logout.php" class="button special">Se Déconnecter</a></li>
 					</ul>
@@ -60,12 +63,15 @@ $count = $sql->rowCount();
 				                 <table class="table table-striped">
 				                     <thead>
 				                     <tr>
-				                         <th>ID_Apprenant</th>
-				                         <th>Nom</th>
-				                         <th>Prénom</th>
-				                         <th>ID_Compétence</th>
-				                         <th>Compétence</th>
-				                         <th>Niveau</th>
+				                     	<?php  while ($donnees = $reponse -> fetch())
+										{
+											?>
+				                         <th><?php echo $donnees['first_name'].'-' .$donnees['last_name'] ?></th>
+				                         
+
+				                     	<?php
+				                     	}
+				                     	?>
 				                     </tr>
 				                     </thead>
 
