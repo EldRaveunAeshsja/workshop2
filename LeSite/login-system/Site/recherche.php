@@ -3,7 +3,22 @@ $bdd = new PDO('mysql:host=localhost;dbname=workshop2','root', '');
 session_start();
 
 $bdd = new PDO('mysql:host=localhost;dbname=workshop2;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-if (isset($_POST["competenceSearch"]))	
+
+// Check if user is logged in using the session variable
+if ( $_SESSION['logged_in'] != 1 ) {
+  $_SESSION['message'] = " Il faudra vous inscrire pour voir votre profil!";
+  header("location: ../error.php");
+}
+else {
+    // Makes it easier to read
+    $id_apprenant = $_SESSION['id_apprenant'];
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $email = $_SESSION['email'];
+    $active = $_SESSION['active'];
+}
+
+if (isset($_POST["competenceSearch"]))
 	{
 		echo $_POST["competenceSearch"];
 		$query = "SELECT * FROM apprenant WHERE competence1 = '" . $_POST["competenceSearch"] . "' OR competence2 = '" . $_POST["competenceSearch"] . "' OR competence3 = '" . $_POST["competenceSearch"] . "'";
@@ -14,7 +29,7 @@ if (isset($_POST["competenceSearch"]))
 		$reponse = $bdd->query('SELECT * FROM apprenant');
 	}
 
-
+//pour le formulaire de rencontre!
 
  ?>
 
@@ -69,8 +84,6 @@ if (isset($_POST["competenceSearch"]))
 										
 											<p class="12u 12u$(medium)">Compétences recherchées : <input class="alt" style="min-width: 300px; min-height: 50px; margin-top: 10px; margin-left: 10px;" name="competenceSearch" type="search" placeholder="Compétence....."></p>
 											<p class="12u 12u$(medium)" style="margin-top: 15px;"><input type="submit" id="validation"></p>
-										
-									
 									</div>
 								</header>
 								</form>
@@ -80,7 +93,7 @@ if (isset($_POST["competenceSearch"]))
 											?>
 											<div class="4u 12u$(medium)">
 												<a href="#three"></a>
-												
+
 											<section class="box" style="max-height: 33em;">
 												<i class="icon big rounded color1 fa-cloud"></i>
 												<h3><?php echo $donnees['first_name'].'-' .$donnees['last_name'] ?></h3>
@@ -98,12 +111,12 @@ if (isset($_POST["competenceSearch"]))
 													</div>
 											</section>
 											</div>
-											<?php 
+											<?php
 											}
 											?>
 					        </div>
 						</div>
-					</section>                    	 
+					</section>
 
 				</div>
 			</section>
@@ -122,10 +135,6 @@ if (isset($_POST["competenceSearch"]))
               <table border=1>
                 <form class="" action="" method="post">
                 <tr>
-                  <td><b>Client</b></td>
-                  <td><input type="text" name="client_renc"></td>
-               </tr>
-                <tr>
                   <td><b>Super héro</b></td>
                   <td><input type="text" name="prestataire_renc"></td>
                 </tr>
@@ -133,7 +142,7 @@ if (isset($_POST["competenceSearch"]))
                   <td><b>Date du rendez-vous</b></td>
                   <td>
                     <selecte name="date_renc">
-                <input type="date" max="2080-12-31" min="2018-03-21" name="the_date">
+                <input type="date" max="2080-12-31" min="2018-03-22" name="date_renc">
                   </td>
                 </tr>
                 <tr>
@@ -168,10 +177,27 @@ if (isset($_POST["competenceSearch"]))
               </table>
               <div class="12u$">
                 <ul class="actions">
-                  <li><input value="Envoyez" class="special big" type="submit"></li>
+                  <li><input value="Envoyez" class="special big" name ="boutton" type="submit"></li>
                 </ul>
               </div>
               </form>
+
+							 <?php
+							   if(isset($_POST['boutton']))
+							   {
+								 $client_renc = $first_name;
+							   $prestataire_renc = $_POST['prestataire_renc'];
+							   $lieu_renc = $_POST['lieu_renc'];
+							   $date_renc = $_POST['date_renc'];
+							   $type_renc = $_POST['type_renc'];
+
+
+							   $requete="INSERT INTO rencontrer (client_renc, prestataire_renc, lieu_renc, date_renc, type_renc) VALUES ('$client_renc', '$prestataire_renc', '$lieu_renc', '$date_renc', '$type_renc' )";
+							   $bdd->query($requete);
+							   }
+								 
+							 ?>
+
 						</div>
 					</form>
 				</div>
