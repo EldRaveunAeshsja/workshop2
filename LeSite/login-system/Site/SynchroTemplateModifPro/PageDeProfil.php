@@ -1,7 +1,24 @@
 <?php
+/* Displays user information and some useful messages */
+session_start();
+
+// Check if user is logged in using the session variable
+if ( $_SESSION['logged_in'] != 1 ) {
+  $_SESSION['message'] = " Il faudra vous inscrire pour voir votre profil!";
+  header("location: ../../error.php");
+}
+else {
+    // Makes it easier to read
+    $id_apprenant = $_SESSION['id_apprenant'];
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $email = $_SESSION['email'];
+    $active = $_SESSION['active'];
+}
+
     $bdd = new PDO('mysql:host=localhost;dbname=workshop2;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-    $reponse = $bdd->query('SELECT * FROM apprenant WHERE id_apprenant = 1;');
+    $reponse = $bdd->query('SELECT * FROM apprenant WHERE id_apprenant = '. $_SESSION['id_apprenant']);
 ?>
 <!DOCTYPE html>
 <!--
